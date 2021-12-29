@@ -1,6 +1,6 @@
 # ft_services 42
 
-Le projet consiste à mettre en place une infrastructure de différents services, avec ses propres règles.
+Le projet consiste à mettre en place une infrastructure de différents services, avec ses propres règles.\n
 Chaque service doit tourner dans un container dédié.
 Chaque container doit obligatoirement porter le même nom que le service concerné.
 Pour des raisons de performances, les containers doivent être build sous Alpine Linux.
