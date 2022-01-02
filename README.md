@@ -64,3 +64,32 @@ function test() {
   console.log("notice the blank line before this function?");
 }
 ```
+# Kubernetes Infos & CheatSheet
+Kubernetes is an open source conatainers orchestror originaly develloped by Google.
+His goal is to help manage containerized applications, in different deployement environments.
+Kubernetes permit a high availability (no downtime), disaster recovery (fast backup and restore) and scalability.
+
+K8s comonents :
+*NODE :* who can contain : Pods (k8s container, usually 1 application/service per pod).
+
+K8s Communication : each pod gets its own Ip adress who change if pod restart/crash.
+*Service* = permanent Ip adress, even if the pod crash, the service will not change, we can connect multiple pods to the same service to have a duplica
+of our application and so if an app pod crash, the app would still be accessible for users.
+External or Internal service (external are open to public request on the internet)
+Service is load balancer too, the least busy pod/server is gonna be choose by service. 
+
+App should be accessible trough browser : Ingress (make the service accessible trough domain name instead of ip adresse:port).
+
+*ConfigMap :* avoid rebuild image and restart service if you want for ex change the db url/service/name
+*Secret :* this component is like ConfigMap but is used to store secret data (base4 encoded) ex = DB_USER = mongo-user or DB_PWD = mongo-pwd
+because it's not secure to store/share credentials or sensitive informations in ConfigMap.
+Data from ConfigMap or Secret services can be used inside the app pod to use it for ex for environement variables or propreties files.
+
+Volumes component : serve to store the data persistent between restart of services (can be local or external / cloud).
+
+Deployement component : it's a blueprints for pods, where you can specify the number of app pods replica you want and her configuration.
+=> CAN NOT BE USED FOR DB
+
+StatefulSet component : 
+
+
