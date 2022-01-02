@@ -93,3 +93,19 @@ Deployement component : it's a blueprints for pods, where you can specify the nu
 StatefulSet component : 
 
 
+# K8s Commands :
+
+Start minikube :
+```
+minikube start --driver=<driver_name>
+```
+*in our case we gonna choose virtual box hypervisor to run minikube. | minikube start --driver=virtualbox
+
+```
+minikube kubectl get nodes
+```
+
+```
+minikube status
+```
+
