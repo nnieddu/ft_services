@@ -64,7 +64,7 @@ function test() {
   console.log("notice the blank line before this function?");
 }
 ```
-# Kubernetes Infos & CheatSheet
+## Kubernetes Infos & CheatSheet
 Kubernetes is an open source conatainers orchestror originaly develloped by Google.
 His goal is to help manage containerized applications, in different deployement environments.
 Kubernetes permit a high availability (no downtime), disaster recovery (fast backup and restore) and scalability.
@@ -93,19 +93,21 @@ Deployement component : it's a blueprints for pods, where you can specify the nu
 StatefulSet component : 
 
 
-# K8s Commands :
+## K8s Commands :
+### minikube CLI
 
-Start minikube :
+######Start minikube :
 ```
 minikube start --driver=<driver_name>
 ```
-*in our case we gonna choose virtual box hypervisor to run minikube. | minikube start --driver=virtualbox
+*in our case we gonna choose virtual box hypervisor to run minikube who need an hypervisor. (minikube start --driver=virtualbox)
 
 ```
 minikube kubectl get nodes
 ```
 
+Display the status of minikube
 ```
 minikube status
 ```
-
+### kubectl CLI
