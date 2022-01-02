@@ -136,9 +136,16 @@ kubectl get replicaset
 ```
 
 ```
-kubectl edit deployment <name of depl pod>
+kubectl edit deployment <name of pod>
 ```
 
+```
+kubectl delete deployment <name of pod>
+```
+-f for file
+```
+kubectl apply -f <config-file.yaml>
+```
 Debug : 
 ```
 kubectl logs <name of pod>
