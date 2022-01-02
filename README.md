@@ -59,11 +59,6 @@ Voici un schéma exemple de ce que vous devrez mettre en place :
 Controller ou de la commande kubectl port-forward est interdite.
 Votre Load Balancer doit être le seul point d’entrée du Cluster.
 
-```
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```
 ## Kubernetes Infos & CheatSheet
 Kubernetes is an open source conatainers orchestror originaly develloped by Google.
 His goal is to help manage containerized applications, in different deployement environments.
@@ -87,11 +82,11 @@ Data from ConfigMap or Secret services can be used inside the app pod to use it 
 
 Volumes component : serve to store the data persistent between restart of services (can be local or external / cloud).
 
-Deployement component : it's a blueprints for pods, where you can specify the number of app pods replica you want and her configuration.
-=> CAN NOT BE USED FOR DB
+Deployement component : it's a blueprints for pods, where you can specify the number of app pods replica you want and her configuration.  
+=> DO NOT USED FOR DB
 
 StatefulSet component : 
-
+Stateless component :
 
 ## K8s Commands :
 ### minikube CLI
