@@ -58,3 +58,9 @@ Voici un schéma exemple de ce que vous devrez mettre en place :
 /!\ L’utilisation de services de type Node Port, de l’objet Ingress
 Controller ou de la commande kubectl port-forward est interdite.
 Votre Load Balancer doit être le seul point d’entrée du Cluster.
+
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
