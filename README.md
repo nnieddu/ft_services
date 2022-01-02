@@ -98,11 +98,28 @@ minikube start --driver=<driver_name>
 *in our case we gonna choose virtual box hypervisor to run minikube who need an hypervisor. (minikube start --driver=virtualbox)
 
 ```
+minikube stop
+```
+
+```
 minikube kubectl get nodes
 ```
 
-Display the status of minikube
+Display the status of minikube :
 ```
 minikube status
 ```
 ### kubectl CLI
+(if you install minikube only, you will need to add "minikube " before commands)
+```
+kubectl get nodes
+```
+
+```
+kubectl get pod
+```
+
+
+```
+kubectl create -h
+```
