@@ -123,3 +123,27 @@ kubectl get pod
 ```
 kubectl create -h
 ```
+```
+kubectl create deployment nginx-depl --image=nginx
+```
+
+```
+kubectl get deployment
+```
+
+```
+kubectl get replicaset
+```
+
+```
+kubectl edit deployment <name of depl pod>
+```
+
+Debug : 
+```
+kubectl logs <name of pod>
+```
+Exec un terminal -it = interactif dans le pod
+```
+kubectl exec -it <pod name> -- bin/bash
+```
