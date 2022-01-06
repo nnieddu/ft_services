@@ -154,3 +154,9 @@ Exec un terminal -it = interactif dans le pod
 ```
 kubectl exec -it <pod name> -- bin/bash
 ```
+
+
+
+
+A reviser :  
+nginx -g daemon off;
