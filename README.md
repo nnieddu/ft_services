@@ -34,6 +34,8 @@ Il devra aussi permettre d’accéder à /phpmyadmin avec un reverse proxy vers 
 
 • Un serveur FTPS ouvert sur le port 21.
 
+Good security blog post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/  
+
 • Un Grafana, accessible sur le port 3000, fonctionnant avec une base de données InfluxDB. 
 Celui-ci devra vous permettre de monitorer tous vos containers. 
 Les deux devront aussi être dans deux containers distincts. 
