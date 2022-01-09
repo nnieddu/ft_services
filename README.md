@@ -111,7 +111,7 @@ Stateless component :
 MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
 Exposes the service externally using a cloud provider loadbalancer. Node-port and Cluster-IP services to which the external loadbalancer routes, are automatically created in k8s. There is a big problem occurs as the type LoadBalancer is only available for use if your K8s cluster is setup in any of the public cloud providers, GCE AWS , etc which ar not free... that's why we use Metallb.
 
-### Rapid and important tips : 
+## Rapid and important tips : 
 *Réglez imagePullPolicysur Never, sinon Kubernetes essaiera de télécharger l'image (dans les deployements .yaml).
 
 *Vous devez exécuter eval $(minikube docker-env)sur chaque terminal ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.
@@ -139,7 +139,12 @@ minikube status
 ```
 Open desired service in web browser :
 ```
-minikube service <service wanterd>
+minikube service <service name>
+```
+
+Getting the NodePort :
+```
+minikube service --url <service name>
 ```
 ```
 minikube dashboard
@@ -191,6 +196,7 @@ Exec un terminal -it = interactif dans le pod
 kubectl exec -it <pod name> -- bin/bash
 ```
 
+# By default, minikube only exposes ports 30000-32767.
 
 `minikube docker - env | Invoke - Expression` # PowerShell windows
 # minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently
