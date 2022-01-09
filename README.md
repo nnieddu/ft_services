@@ -69,7 +69,7 @@ metallb & nginx :
 https://metallb.universe.tf/installation/#installation-by-manifest
 https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe
 https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-metallb.html
-
+Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
 
 
 
@@ -96,19 +96,26 @@ App should be accessible trough browser : Ingress (make the service accessible t
 *ConfigMap :* avoid rebuild image and restart service if you want for ex change the db url/service/name
 *Secret :* this component is like ConfigMap but is used to store secret data (base4 encoded) ex = DB_USER = mongo-user or DB_PWD = mongo-pwd
 because it's not secure to store/share credentials or sensitive informations in ConfigMap.
-Data from ConfigMap or Secret services can be used inside the app pod to use it for ex for environement variables or propreties files.
+Data from ConfigMap or Secret services can be used inside the app pod to use it for environement variables or propreties files for ex.
 
 Volumes component : serve to store the data persistent between restart of services (can be local or external / cloud).
 
 Deployement component : it's a blueprints for pods, where you can specify the number of app pods replica you want and her configuration.  
-=> DO NOT USED FOR DB
+=> Do not use Deployement for DB !
 
+For DB :
 StatefulSet component : 
 Stateless component :
 
 
 MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
-    
+Exposes the service externally using a cloud provider loadbalancer. Node-port and Cluster-IP services to which the external loadbalancer routes, are automatically created in k8s. There is a big problem occurs as the type LoadBalancer is only available for use if your K8s cluster is setup in any of the public cloud providers, GCE AWS , etc which ar not free... that's why we use Metallb.
+
+### Rapid and important tips : 
+*Réglez imagePullPolicysur Never, sinon Kubernetes essaiera de télécharger l'image (dans les deployements .yaml).
+
+*Vous devez exécuter eval $(minikube docker-env)sur chaque terminal ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.
+
 ## K8s Commands :
 ### minikube CLI
 
@@ -130,6 +137,14 @@ Display the status of minikube :
 ```
 minikube status
 ```
+Open desired service in web browser :
+```
+minikube service <service wanterd>
+```
+```
+minikube dashboard
+```
+
 ### kubectl CLI
 (if you install minikube only, you will need to add "minikube " before commands)
 ```
@@ -178,5 +193,4 @@ kubectl exec -it <pod name> -- bin/bash
 
 
 `minikube docker - env | Invoke - Expression` # PowerShell windows
-
-Good security blog post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
+# minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently
