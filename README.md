@@ -64,6 +64,7 @@ https://minikube.sigs.k8s.io/docs/start/
 https://minikube.sigs.k8s.io/docs/drivers/virtualbox/
 https://minikube.sigs.k8s.io/docs/handbook/accessing/
 https://minikube.sigs.k8s.io/docs/handbook/pushing/
+https://minikube.sigs.k8s.io/docs/commands/docker-env/
 
 metallb & nginx :
 https://metallb.universe.tf/installation/#installation-by-manifest
