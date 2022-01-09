@@ -4,37 +4,34 @@ Le projet consiste à mettre en place une infrastructure de différents services
 Chaque service doit tourner dans un container dédié.
 Chaque container doit obligatoirement porter le même nom que le service concerné.
 Pour des raisons de performances, les containers doivent être build sous Alpine Linux.
-Aussi, ils possédent tous un Dockerfile sera appelé dans le setup.sh.
+Aussi, ils possédent tous un Dockerfile aui seront build et appelés dans le setup.sh.
 
 Infrastructure et différents services à mettre en place :
 
 • Le dashboard web de Kubernetes. Celui-ci est utile pour gérer votre cluster.
 
-• Un Load Balancer qui gère l’accès externe à nos services dans un cluster.
+• Un Load Balancer (matallb) qui gère l’accès externe à nos services dans un cluster.
 C’est uniquement lui qui servira pour exposer nos services. 
 Nous devons garder les ports propres aux services (IP :3000 pour Grafana etc). 
 Le Load Balancer n’utilise qu’une seule ip.
 
 • Un WordPress ouvert sur le port 5050, fonctionnant avec une base de données MySQL. 
 Les deux devront être dans deux containers distincts.
-
 Le WordPress comporte plusieurs utilisateurs et un administrateur (pour tester que tous fonctionne bien).
-WordPress aura son propre serveur nginx.
+WordPress a son propre serveur nginx.
 Le Load Balancer devra donc pouvoir directement rediriger sur ce service.
 
 • phpMyAdmin, tournant sur le port 5000 et relié à la base de données MySQL.
-PhpMyAdmin aura son propre serveur nginx. 
+PhpMyAdmin a son propre serveur nginx. 
 Le Load Balancer devra donc pouvoir directement rediriger sur ce service.
 
-• Un container contenant un serveur nginx ouvert sur les ports 80 et 443. 
+• Un container avec un serveur nginx ouvert sur les ports 80 et 443. 
 Le port 80 sera en http et devra faire une redirection systématique de type 301 vers le 443, qui sera lui en https.
 La page affichée n’a pas d’importance, tant que ce n’est pas une erreur http.
-Ce container dera permettre d’accéder à une route /wordpress qui fait un redirect 307 vers IP :WPPORT.
+Ce container permet d’accéder à une route /wordpress qui fait un redirect 307 vers IP :WPPORT.
 Il devra aussi permettre d’accéder à /phpmyadmin avec un reverse proxy vers IP :PMAPORT.
 
-• Un serveur FTPS ouvert sur le port 21.
-
-Good security blog post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/  
+• Un serveur FTPS ouvert sur le port 21. 
 
 • Un Grafana, accessible sur le port 3000, fonctionnant avec une base de données InfluxDB. 
 Celui-ci devra vous permettre de monitorer tous vos containers. 
@@ -53,15 +50,26 @@ FTPS, Grafana et Nginx, phpMyAdmin et Wordpress doivent etre du type "LoadBalanc
 Influxdb et Mysql devront être de type "ClusterIP". D’autres entrées
 peuvent être présente, mais aucune ne doit etre du type "NodePort".
 
-Voici un schéma exemple de ce que vous devrez mettre en place :
+Voici un schéma exemple de ce qui est mis en place :
 
 ![shema](https://github.com/nnieddu/ft_services/blob/main/shema.png)
 
 /!\ L’utilisation de services de type Node Port, de l’objet Ingress
-Controller ou de la commande kubectl port-forward est interdite.
-Votre Load Balancer doit être le seul point d’entrée du Cluster.
+Controller ou de la commande kubectl port-forward est interdite pour le sujet de cet exercice.
+Le Load Balancer doit être le seul point d’entrée du Cluster.
+
+## Links :
+metallb :
+https://metallb.universe.tf/installation/#installation-by-manifest
+https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe
+https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-metallb.html
+
 
 ## Kubernetes Infos & CheatSheet
+
+What is Minikube?
+Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
+
 Kubernetes is an open source conatainers orchestror originaly develloped by Google.
 His goal is to help manage containerized applications, in different deployement environments.
 Kubernetes permit a high availability (no downtime), disaster recovery (fast backup and restore) and scalability.
@@ -163,6 +171,6 @@ kubectl exec -it <pod name> -- bin/bash
 A reviser :  
 nginx -g daemon off;
 
-What is Minikube?
 
-Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
+
+Good security blog post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
