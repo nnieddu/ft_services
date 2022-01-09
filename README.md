@@ -59,10 +59,18 @@ Controller ou de la commande kubectl port-forward est interdite pour le sujet de
 Le Load Balancer doit être le seul point d’entrée du Cluster.
 
 ## Links :
-metallb :
+minikube bases, start, images building and usage on local :
+https://minikube.sigs.k8s.io/docs/start/
+https://minikube.sigs.k8s.io/docs/drivers/virtualbox/
+https://minikube.sigs.k8s.io/docs/handbook/accessing/
+https://minikube.sigs.k8s.io/docs/handbook/pushing/
+
+metallb & nginx :
 https://metallb.universe.tf/installation/#installation-by-manifest
 https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe
 https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-metallb.html
+
+
 
 
 ## Kubernetes Infos & CheatSheet
@@ -98,6 +106,9 @@ Deployement component : it's a blueprints for pods, where you can specify the nu
 StatefulSet component : 
 Stateless component :
 
+
+MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
+    
 ## K8s Commands :
 ### minikube CLI
 
@@ -166,11 +177,6 @@ kubectl exec -it <pod name> -- bin/bash
 ```
 
 
-
-
-A reviser :  
-nginx -g daemon off;
-
-
+`minikube docker - env | Invoke - Expression` # PowerShell windows
 
 Good security blog post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
