@@ -123,8 +123,8 @@ Exposes the service externally using a cloud provider loadbalancer. Node-port an
 
 *Vous devez exécuter eval $(minikube docker-env)sur chaque terminal ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.
 
-## K8s Commands :
-### minikube CLI
+## K8s Commands
+### minikube CLI :
 
 ###### Start minikube :
 ```
