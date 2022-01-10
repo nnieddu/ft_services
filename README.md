@@ -72,7 +72,11 @@ https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846d
 https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-metallb.html
 Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
 
+https://grafana.com/docs/grafana/latest/introduction/
 
+Influxdb :
+https://docs.influxdata.com/influxdb/v2.1/
+MacOs : https://docs.influxdata.com/influxdb/v2.1/install/
 
 ## Kubernetes Infos & CheatSheet
 
