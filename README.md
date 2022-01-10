@@ -78,6 +78,8 @@ Influxdb :
 https://docs.influxdata.com/influxdb/v2.1/
 MacOs : https://docs.influxdata.com/influxdb/v2.1/install/
 
+https://wiki.alpinelinux.org/wiki/Enable_Community_Repository
+
 ## Kubernetes Infos & CheatSheet
 
 What is Minikube?
