@@ -73,6 +73,7 @@ https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-metallb.h
 Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
 
 https://grafana.com/docs/grafana/latest/introduction/
+https://grafana.com/grafana/dashboards/?search=kubernetes
 
 Influxdb :
 https://docs.influxdata.com/influxdb/v2.1/
@@ -208,4 +209,4 @@ kubectl exec -it <pod name> -- bin/bash
 `minikube docker - env | Invoke - Expression` # PowerShell windows
 # minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently
 
-kubectl get events
+kubectl get events 
