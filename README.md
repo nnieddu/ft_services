@@ -81,6 +81,7 @@ MacOs : https://docs.influxdata.com/influxdb/v2.1/install/
 
 https://wiki.alpinelinux.org/wiki/Enable_Community_Repository
 
+https://wiki.alpinelinux.org/wiki/FTP
 ## Kubernetes Infos & CheatSheet
 
 What is Minikube?
@@ -210,3 +211,12 @@ kubectl exec -it <pod name> -- bin/bash
 # minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently
 
 kubectl get events 
+
+#Dashboard
+minikube dashboard
+
+#FTP
+kubectl get all
+kubectl exec -it POD_NAME -- bin/sh
+lftp FTP_SERVER_ADRESS
+
