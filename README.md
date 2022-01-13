@@ -207,3 +207,5 @@ kubectl exec -it <pod name> -- bin/bash
 
 `minikube docker - env | Invoke - Expression` # PowerShell windows
 # minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently
+
+kubectl get events
