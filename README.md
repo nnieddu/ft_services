@@ -30,7 +30,7 @@ Le port 80 sera en http et devra faire une redirection systématique de type 301
 La page affichée n’a pas d’importance, tant que ce n’est pas une erreur http.
 Ce container permet d’accéder à une route /wordpress qui fait un redirect 307 vers IP :WPPORT.
 Il devra aussi permettre d’accéder à /phpmyadmin avec un reverse proxy vers IP :PMAPORT.
-
+ 
 • Un serveur FTPS ouvert sur le port 21. 
 
 • Un Grafana, accessible sur le port 3000, fonctionnant avec une base de données InfluxDB. 
