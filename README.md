@@ -83,7 +83,7 @@ https://docs.influxdata.com/influxdb/v2.1/
 
 Ftps (vsftpd) :
 https://wiki.alpinelinux.org/wiki/FTP
-https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vsftpd-conf.html
+http://vsftpd.beasts.org/vsftpd_conf.html
 
 ## Kubernetes Infos & CheatSheet
 
