@@ -1,0 +1,23 @@
+server {
+    listen       5000 ssl;
+    listen       [::]:5000 ssl;
+    server_name  _IP_;  
+
+	ssl_certificate /etc/ssl/certs/localhost.crt;
+    ssl_certificate_key /etc/ssl/certs/localhost.key;
+
+	error_page 497 https://$server_name:$server_port$request_uri;
+	
+	root /usr/share/nginx/html/phpmyadmin;
+	index index.php index.html;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+	location ~ \.php$ {
+		include /etc/nginx/fastcgi_params;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		fastcgi_pass 127.0.0.1:9000;
+		fastcgi_index index.php;
+   	 }
+}
+
