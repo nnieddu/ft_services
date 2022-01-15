@@ -86,6 +86,8 @@ https://docs.influxdata.com/influxdb/v2.1/
 Ftps (vsftpd) :
 https://wiki.alpinelinux.org/wiki/FTP
 http://vsftpd.beasts.org/vsftpd_conf.html
+https://www.liquidweb.com/kb/configure-vsftpd-ssl/
+https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vsftpd-conf.html
 
 ## Kubernetes Infos & CheatSheet
 
