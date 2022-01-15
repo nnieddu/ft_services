@@ -1,4 +1,4 @@
-# ft_services 42
+# ft_services 42 (README WIP)
 
 Le projet consiste à mettre en place une infrastructure de différents services, avec ses propres règles.\n
 Chaque service doit tourner dans un container dédié.
@@ -59,6 +59,9 @@ Controller ou de la commande kubectl port-forward est interdite pour le sujet de
 Le Load Balancer doit être le seul point d’entrée du Cluster.
 
 ## Links :
+Alpine :
+https://wiki.alpinelinux.org/wiki/Enable_Community_Repository
+
 minikube bases, start, images building and usage on local :
 https://minikube.sigs.k8s.io/docs/start/
 https://minikube.sigs.k8s.io/docs/drivers/virtualbox/
@@ -77,11 +80,11 @@ https://grafana.com/grafana/dashboards/?search=kubernetes
 
 Influxdb :
 https://docs.influxdata.com/influxdb/v2.1/
-MacOs : https://docs.influxdata.com/influxdb/v2.1/install/
 
-https://wiki.alpinelinux.org/wiki/Enable_Community_Repository
-
+Ftps (vsftpd) :
 https://wiki.alpinelinux.org/wiki/FTP
+https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vsftpd-conf.html
+
 ## Kubernetes Infos & CheatSheet
 
 What is Minikube?
