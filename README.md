@@ -58,6 +58,8 @@ Voici un schéma exemple de ce qui est mis en place :
 Controller ou de la commande kubectl port-forward est interdite pour le sujet de cet exercice.
 Le Load Balancer doit être le seul point d’entrée du Cluster.
 
+Pour le bon fonctionnement de ssh et ftps d'autres ports doivent etre utilises.
+
 ## Links :
 Alpine :
 https://wiki.alpinelinux.org/wiki/Enable_Community_Repository
