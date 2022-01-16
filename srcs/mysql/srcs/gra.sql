@@ -1,0 +1,4 @@
+CREATE DATABASE grafana_db;
+CREATE USER 'gra_user' IDENTIFIED BY 'nini';
+GRANT ALL PRIVILEGES ON grafana_db.* TO 'gra_user';
+FLUSH PRIVILEGES;
