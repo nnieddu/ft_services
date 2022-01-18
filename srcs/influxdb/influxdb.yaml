@@ -29,7 +29,6 @@ spec:
           mountPath: "./data"
         - name: config-maps
           mountPath: "./certs"
-
 ---
 apiVersion: v1
 kind: Service
@@ -43,5 +42,5 @@ spec:
   ports:
     - protocol: TCP
       port: 8086
-      nodePort: 8086
       targetPort: 8086
+      name: influx

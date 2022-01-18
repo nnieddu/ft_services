@@ -588,10 +588,7 @@
         "label": null,
         "name": "container_name",
         "options": [
-          {
-            "selected": true,
-            "text": "wordpress",
-            "value": "wordpress"
+          {now-30m
           }
         ],
         "query": "wordpress",

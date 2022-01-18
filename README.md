@@ -72,13 +72,22 @@ https://minikube.sigs.k8s.io/docs/handbook/pushing/
 https://minikube.sigs.k8s.io/docs/commands/docker-env/
 
 metallb & nginx :
-https://metallb.universe.tf/installation/#installation-by-manifest
+
+Useless if use of metallb addon : https://metallb.universe.tf/installation/#installation-by-manifest
+https://devopslearning.medium.com/metallb-load-balancer-for-bare-metal-kubernetes-43686aa0724f
 https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe
-https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-metallb.html
 Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
 
+mysql :
+https://dev.mysql.com/doc/refman/5.7/en/connecting.html
+
+phpmyadmin :
+https://docs.phpmyadmin.net/fr/latest/
+hide useless dbs : https://stackoverflow.com/questions/12071460/how-to-hide-information-schema-database-from-phpmyadmin
+
+Grafana :
 https://grafana.com/docs/grafana/latest/introduction/
-https://grafana.com/grafana/dashboards/?search=kubernetes
+https://grafana.com/grafana/dashboards/
 
 Influxdb :
 https://docs.influxdata.com/influxdb/v2.1/
@@ -88,6 +97,10 @@ https://wiki.alpinelinux.org/wiki/FTP
 http://vsftpd.beasts.org/vsftpd_conf.html
 https://www.liquidweb.com/kb/configure-vsftpd-ssl/
 https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vsftpd-conf.html
+
+wordpress & Mysql alpine : 
+https://wiki.alpinelinux.org/wiki/WordPress
+https://wp-cli.org/
 
 ## Kubernetes Infos & CheatSheet
 
@@ -211,8 +224,11 @@ Exec un terminal -it = interactif dans le pod
 ```
 kubectl exec -it <pod name> -- bin/bash
 ```
+```
+kubectl rollout restart deploy DEPLOYEMENT
+```
 
-# By default, minikube only exposes ports 30000-32767.
+# By default, minikube only exposes/use Nodeport 30000-32767.
 
 `minikube docker - env | Invoke - Expression` # PowerShell windows
 # minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently

@@ -1,13 +1,16 @@
 FROM alpine:3.12
 
-COPY ./config.conf .
-COPY ./influx.conf .
+ARG dockerHost 
 
 RUN apk update 
 RUN apk upgrade 
 RUN apk add wget influxdb telegraf --repository='http://dl-cdn.alpinelinux.org/alpine/latest-stable/community/'
 
+COPY ./config.conf .
+COPY ./influx.conf .
 COPY ./start.sh .
+
+RUN sed -i "s=_IP_=$DOCKER_HOST=g" config.conf
 
 EXPOSE 8086
 

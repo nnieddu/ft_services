@@ -1,5 +1,7 @@
 FROM alpine:3.12
 
+ARG clusterIP
+
 RUN apk update
 RUN apk upgrade 
 RUN apk add nginx openssl php7 php7-fpm php7-opcache php7-json \
@@ -14,6 +16,8 @@ RUN mkdir -p /run/nginx
 COPY ./default.conf /etc/nginx/conf.d/
 COPY ./config.inc.php .
 COPY ./start.sh .
+
+RUN sed -i "s/_IP_/$clusterIP/g" /etc/nginx/conf.d/default.conf
 
 EXPOSE 5000
 

@@ -1,8 +1,8 @@
 #!/bin/sh
 
-mkdir -p /usr/share/grafana/conf/provisioning/datasources
-mkdir -p /usr/share/grafana/conf/provisioning/dashboards
-mkdir -p /var/lib/grafana/dashboards
+# mkdir -p /usr/share/grafana/conf/provisioning/datasources
+# mkdir -p /usr/share/grafana/conf/provisioning/dashboards
+# mkdir -p /var/lib/grafana/dashboards
 
 chown -R root:root /etc/grafana && \
 chmod -R a+r /etc/grafana && \

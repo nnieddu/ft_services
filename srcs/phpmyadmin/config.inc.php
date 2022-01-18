@@ -33,6 +33,7 @@ $cfg['Servers'][$i]['host'] = '10.96.83.102';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = yes;
 $cfg['PmaAbsoluteUri'] = './';
+$cfg['Servers'][$i]['hide_db'] = 'information_schema|test';
 /**
  * phpMyAdmin configuration storage settings.
  */
