@@ -17,13 +17,6 @@ spec:
       - name: nginx
         imagePullPolicy: Never
         image: ft_nginx
-        ports:
-        - containerPort: 22
-          name: ssh
-        - containerPort: 80
-          name: http
-        - containerPort: 443
-          name: https
 ---
 apiVersion: v1
 kind: Service
@@ -37,13 +30,15 @@ spec:
   selector:
     app: nginx
   ports:
+    # - protocol: TCP
+    #   port: 22
+    #   targetPort: 22
+    #   name: ssh
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 80
       name: http
     - protocol: TCP
       port: 443
       targetPort: 443
-      nodePort: 443
       name: https

@@ -13,10 +13,9 @@ php7-dom php7-simplexml
 COPY ./default.conf /etc/nginx/conf.d/
 COPY ./start.sh .
 
-#Config IPs ;
-RUN sed -i "s/_IP_/$clusterIP/g" /etc/nginx/conf.d/default.conf
-RUN sed -i "s/_IP_/$clusterIP/g" start.sh
-
 EXPOSE 5050
 
-CMD ["sh", "start.sh"]
+RUN sh start.sh $clusterIP
+
+# CMD ["sh", "start.sh", "$clusterIP"]
+CMD ["nginx", "-g", "daemon off;"]

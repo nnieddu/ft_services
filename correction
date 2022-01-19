@@ -12,7 +12,7 @@ nginx -g daemon off
 LoadBalancer
 
 ssl phphmyadmin
-
+target port test en supprimant
 ------------------------------------------
 
 # Kubectl usefull cmds

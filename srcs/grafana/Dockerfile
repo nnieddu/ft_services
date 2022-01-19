@@ -16,5 +16,4 @@ COPY ./grafana.ini .
 
 EXPOSE 3000
 
-
 CMD ["sh", "start.sh"]

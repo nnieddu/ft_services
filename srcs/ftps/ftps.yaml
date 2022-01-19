@@ -37,10 +37,8 @@ spec:
     - protocol: TCP
       port: 21
       targetPort: 21
-      nodePort: 21
       name: ftp
     - protocol: TCP
       port: 6000
       targetPort: 6000
-      nodePort: 6000
       name: pasv-port

@@ -2,7 +2,7 @@
 interval = "10s"
 flush_interval = "10s"
 [[inputs.docker]]
-  endpoint = "tcp://192.168.59.254:2376"
+  endpoint = "_IP_"
 
   gather_services = false
 

@@ -1,3 +1,8 @@
+#!/bin/sh
+
+# mkdir './data'
+# mkdir './certs'
+
 influxd -config ./influx.conf &
 
 influx << EOF

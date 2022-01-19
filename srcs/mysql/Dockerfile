@@ -4,11 +4,9 @@ RUN apk update
 RUN apk upgrade
 RUN apk add mariadb mariadb-client wget
 
-COPY ./gra.sql .
-COPY ./wp.sql .
-COPY ./mariadb.cnf .
-COPY ./install_db.sh .
-COPY ./start.sh .
+# COPY ./*.sql ./
+COPY start.sh .
+COPY install_db.sh .
 
 EXPOSE 3306
 

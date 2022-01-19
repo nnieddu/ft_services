@@ -22,8 +22,6 @@ spec:
       - name: influxdb
         imagePullPolicy: Never
         image: ft_influxdb
-        ports:
-        - containerPort: 8086
         volumeMounts:
         - name: pv-dock-cert
           mountPath: "./data"

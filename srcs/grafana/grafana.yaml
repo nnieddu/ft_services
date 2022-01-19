@@ -17,9 +17,6 @@ spec:
       - name: grafana
         imagePullPolicy: Never
         image: ft_grafana
-        ports:
-        - containerPort: 3000
-          name: http
 ---
 apiVersion: v1
 kind: Service
@@ -36,5 +33,4 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 3000
       name: http

@@ -1,11 +1,12 @@
 #!/bin/bash
 
-minikube start --driver=virtualbox --extra-config=apiserver.service-node-port-range=1-6000
+minikube start --driver=virtualbox
 minikube addons enable metallb
 
 MY_CLUSTER_IP=$(minikube ip)
 
 eval $(minikube docker-env)
+minikube dashboard --port 0
 
 #--Metallb--
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
@@ -21,18 +22,23 @@ kubectl apply -f srcs/nginx/nginx.yaml
 docker build srcs/mysql/ -t ft_mysql
 kubectl apply -f srcs/mysql/mysql.yaml
 
+#--PhpMyAdmin--
+docker build srcs/phpmyadmin/ -t ft_phpmyadmin --build-arg clusterIP=$MY_CLUSTER_IP
+kubectl apply -f srcs/phpmyadmin/phpmyadmin.yaml
+
 #--InfluxDB--
+# kubectl create configmap cert-conf --from-file=$DOCKER_CERT_PATH
+# docker build srcs/influxdb/ -t ft_influxdb --build-arg dockerHost=$DOCKER_HOST
+# kubectl apply -f srcs/influxdb/influxdb.yaml
+
 kubectl create configmap cert-conf --from-file=$DOCKER_CERT_PATH
-docker build srcs/influxdb/ -t ft_influxdb --build-arg dockerHost=$DOCKER_HOST
+sed "s=_IP_=$DOCKER_HOST=g" srcs/influxdb/sample > srcs/influxdb/config.conf
+docker build srcs/influxdb/ -t ft_influxdb
 kubectl apply -f srcs/influxdb/influxdb.yaml
 
 #--Grafana--
 docker build srcs/grafana/ -t ft_grafana
 kubectl apply -f srcs/grafana/grafana.yaml
-
-#--PhpMyAdmin--
-docker build srcs/phpmyadmin/ -t ft_phpmyadmin --build-arg clusterIP=$MY_CLUSTER_IP
-kubectl apply -f srcs/phpmyadmin/phpmyadmin.yaml
 
 #--Wordpress--
 docker build srcs/wordpress/ -t ft_wordpress --build-arg clusterIP=$MY_CLUSTER_IP
@@ -41,7 +47,6 @@ kubectl apply -f srcs/wordpress/wordpress.yaml
 #--Ftps--
 docker build srcs/ftps -t ft_ftps --build-arg clusterIP=$MY_CLUSTER_IP
 kubectl apply -f srcs/ftps/ftps.yaml
-
 
 echo "********logins********
 
@@ -55,7 +60,6 @@ echo "********logins********
 ---------------------------
 [ftps]		= admin:admin
 ---------------------------
-[ssh]		= root:root
 
 Minikube ip: http://$MY_CLUSTER_IP
 
