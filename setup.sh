@@ -58,7 +58,7 @@ echo "
 [grafanaDB] = gra_user:nini
 [grafanaU]  = admin:admin
 ----------------------------
-[ftps]		= admin:admin
+[ftps]  = admin:admin
 ----------------------------
 
 Minikube ip: $MY_CLUSTER_IP
