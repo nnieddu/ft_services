@@ -20,5 +20,3 @@ docker system prune -a -f
 
 rm -rf $HOME/.minikube
 rm -rf $HOME/.kube
-
-rm -rf ~/goinfre/*

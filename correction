@@ -1,18 +1,6 @@
-reverse proxy
-nginx   proxy_pass
-node NodePort
-
 Cluster IP => db ?
-
-ssh / p22 / dashboard
 
 nginx -g daemon off
 -g 'directives' Set global configuration directives. See EXAMPLES for details. 
 
 LoadBalancer
-
-ssl phphmyadmin
-
-mysqld_safe ?
-check better way to start/create db
-------------------------------------------

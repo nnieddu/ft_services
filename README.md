@@ -79,8 +79,9 @@ https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846d
 https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236081-mettez-en-place-un-reverse-proxy-avec-nginx
 Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
 
-mysql :
+mysql / mariaDB:
 https://dev.mysql.com/doc/refman/5.7/en/connecting.html
+https://mariadb.com/kb/en/mysqld_safe/
 
 phpmyadmin :
 https://docs.phpmyadmin.net/fr/latest/
@@ -249,8 +250,6 @@ kubectl exec -it POD_NAME -- bin/sh
 => ./fast.sh DEPLOYMENT
 
 kubectl rollout restart deploy DEPLOYMENT
-
-kubectl delete pods -l name=myLabel
 
 #FTPS
 lftp _IP_

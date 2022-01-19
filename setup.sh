@@ -48,18 +48,18 @@ kubectl apply -f srcs/wordpress/wordpress.yaml
 docker build srcs/ftps -t ft_ftps --build-arg clusterIP=$MY_CLUSTER_IP
 kubectl apply -f srcs/ftps/ftps.yaml
 
-echo "********logins********
-
+echo "
+----------logins------------
 [wp admin]	= nini:nini
 [wp user1]	= user1:nini
 [wp user2]	= user2:nini
 [wp DB]		= wp_user:nini
----------------------------
+----------------------------
 [grafanaDB] = gra_user:nini
 [grafanaU]  = admin:admin
----------------------------
+----------------------------
 [ftps]		= admin:admin
----------------------------
+----------------------------
 
 Minikube ip: $MY_CLUSTER_IP
 
