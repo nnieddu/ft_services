@@ -228,18 +228,34 @@ kubectl exec -it <pod name> -- bin/bash
 kubectl rollout restart deploy DEPLOYEMENT
 ```
 
-# By default, minikube only exposes/use Nodeport 30000-32767.
+ By default, minikube only exposes/use Nodeport 30000-32767.
 
 `minikube docker - env | Invoke - Expression` # PowerShell windows
-# minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently
+
+minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently
 
 kubectl get events 
 
 #Dashboard
 minikube dashboard
 
-#FTP
-kubectl get all
-kubectl exec -it POD_NAME -- bin/sh
-lftp FTP_SERVER_ADRESS
+# Kubectl usefull cmds
 
+kubectl get all
+kubectl logs deployment/DEPLOYMENT
+
+kubectl exec -it POD_NAME -- bin/sh
+=> ./fast.sh DEPLOYMENT
+
+kubectl rollout restart deploy DEPLOYMENT
+
+kubectl delete pods -l name=myLabel
+
+#FTPS
+lftp _IP_
+login admin admin
+
+#minikube start --extra-config=kubelet.authentication-token-webhook=true is used to enable
+# API bearer tokens to authenticate to the kubelet's HTTPS endpoint
+# --host-only-cidr works only with virtualbox driver + safari make things worse
+# delete to use default host cidr (192.168.99.1/24) if anything goes wrong

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-sed -i "s/_IP_/$1/g" /etc/nginx/conf.d/default.conf
-
 mkdir -p /usr/share/nginx/html
 mkdir -p /run/nginx 
 
@@ -17,8 +15,9 @@ chown -R nginx:nginx /usr/share/nginx/html/phpmyadmin
 chmod 755 /usr/share/nginx/html/phpmyadmin
 chmod 755 /usr/share/nginx/html/phpmyadmin/tmp
 
+#start php and nginx :
 /usr/sbin/php-fpm7
-# nginx -g 'daemon off;'
+nginx -g 'daemon off;'
 
 #clean
-rm start.sh
+rm start.sh #!!

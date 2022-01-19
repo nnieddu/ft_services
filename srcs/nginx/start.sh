@@ -26,6 +26,8 @@ echo "<p>You can use /wordpress</p>" >> /usr/share/nginx/html/index.html
 # /usr/bin/ssh-keygen -A
 # ssh-keygen -t rsa -b 4096 -f /etc/ssh/ssh_host_key
 
+# /usr/sbin/sshd -D &
+
 #ssl :
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 -subj '/C=FR/ST=FR/L=null/O=null/CN=null' \

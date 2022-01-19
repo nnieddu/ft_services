@@ -12,30 +12,7 @@ nginx -g daemon off
 LoadBalancer
 
 ssl phphmyadmin
-target port test en supprimant
+
+mysqld_safe ?
+check better way to start/create db
 ------------------------------------------
-
-# Kubectl usefull cmds
-
-kubectl get all
-kubectl logs deployment/DEPLOYMENT
-
-kubectl exec -it POD_NAME -- bin/sh
-
-kubectl rollout restart deploy DEPLOYMENT
-
-kubectl delete pods -l name=myLabel
-
-#SSH
-ssh _IP_ -l root
-root
-
-#FTPS
-lftp _IP_
-login admin admin
-
-#minikube start --extra-config=kubelet.authentication-token-webhook=true is used to enable
-# API bearer tokens to authenticate to the kubelet's HTTPS endpoint
-# --host-only-cidr works only with virtualbox driver + safari make things worse
-# delete to use default host cidr (192.168.99.1/24) if anything goes wrong
-

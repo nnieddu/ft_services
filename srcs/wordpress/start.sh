@@ -1,8 +1,5 @@
 #!/bin/sh
 
-sed -i "s/_IP_/$1/g" start.sh
-sed -i "s/_IP_/$1/g" /etc/nginx/conf.d/default.conf
-
 #create nginx folder and give him rights :
 mkdir -p /usr/share/nginx/html
 mkdir -p /run/nginx
@@ -34,7 +31,6 @@ wp-cli user create user2 user2@example.com --user_pass=nini --path=/usr/share/ng
 
 #start php and nginx :
 /usr/sbin/php-fpm7
-# nginx -g 'daemon off;'
+nginx -g 'daemon off;'
 
-#clean
-rm start.sh
+rm start.sh #!!
