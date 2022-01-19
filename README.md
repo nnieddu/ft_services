@@ -76,6 +76,7 @@ metallb & nginx :
 Useless if use of metallb addon : https://metallb.universe.tf/installation/#installation-by-manifest
 https://devopslearning.medium.com/metallb-load-balancer-for-bare-metal-kubernetes-43686aa0724f
 https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe
+https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236081-mettez-en-place-un-reverse-proxy-avec-nginx
 Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
 
 mysql :
@@ -143,7 +144,7 @@ Exposes the service externally using a cloud provider loadbalancer. Node-port an
 ## Rapid and important tips : 
 *Régler imagePullPolicysur Never, sinon Kubernetes essaiera de télécharger l'image (dans les deployements .yaml).
 
-*Vous devez exécuter eval $(minikube docker-env)sur chaque terminal ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.
+*Vous devez exécuter eval $(minikube docker-env) sur chaque terminal ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.
 
 ## K8s Commands
 ### minikube CLI :

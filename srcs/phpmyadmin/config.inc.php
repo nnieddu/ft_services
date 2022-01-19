@@ -34,6 +34,8 @@ $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = yes;
 $cfg['PmaAbsoluteUri'] = './';
 $cfg['Servers'][$i]['hide_db'] = 'information_schema|test';
+$cfg['ZeroConf'] = false;
+$cfg['PmaNoRelation_DisableWarning'] = true;
 /**
  * phpMyAdmin configuration storage settings.
  */

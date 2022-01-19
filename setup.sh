@@ -9,9 +9,15 @@ eval $(minikube docker-env)
 
 #--Metallb--
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
-sed -i "s/_IP_/$MY_CLUSTER_IP/g" srcs/metallb-conf.yaml
+
+# sed -i "s/_IP_/$MY_CLUSTER_IP/g" srcs/metallb-conf.yaml
+# kubectl apply -f srcs/metallb-conf.yaml
+# sed -i "s/$MY_CLUSTER_IP/_IP_/g" srcs/metallb-conf.yaml srcs/backupmlb.yaml
+
+#MACOS SCHOOL VERSION (sed -i marche pas sur mac) : 
+perl -i -pe"s/_IP_/$MY_CLUSTER_IP/g" srcs/metallb-conf.yaml
 kubectl apply -f srcs/metallb-conf.yaml
-sed -i "s/$MY_CLUSTER_IP/_IP_/g" srcs/metallb-conf.yaml
+perl -i -pe"s/$MY_CLUSTER_IP/_IP_/g" srcs/metallb-conf.yaml
 
 #--Nginx--
 docker build srcs/nginx -t ft_nginx --build-arg clusterIP=$MY_CLUSTER_IP
