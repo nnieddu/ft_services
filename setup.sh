@@ -10,17 +10,18 @@ eval $(minikube docker-env)
 #--Metallb--
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
+# Linux version :
 # sed -i "s/_IP_/$MY_CLUSTER_IP/g" srcs/metallb-conf.yaml
 # kubectl apply -f srcs/metallb-conf.yaml
 # sed -i "s/$MY_CLUSTER_IP/_IP_/g" srcs/metallb-conf.yaml srcs/backupmlb.yaml
 
-#MACOS SCHOOL VERSION (sed -i marche pas sur mac) : 
+# MACOS SCHOOL VERSION (sed -i marche pas pareil sur mac) : 
 perl -i -pe"s/_IP_/$MY_CLUSTER_IP/g" srcs/metallb-conf.yaml
 kubectl apply -f srcs/metallb-conf.yaml
 perl -i -pe"s/$MY_CLUSTER_IP/_IP_/g" srcs/metallb-conf.yaml
 
 #--Nginx--
-docker build srcs/nginx -t ft_nginx --build-arg clusterIP=$MY_CLUSTER_IP
+docker build srcs/nginx -t ft_nginx
 kubectl apply -f srcs/nginx/nginx.yaml
 
 #--MySQL--
@@ -41,7 +42,7 @@ docker build srcs/grafana/ -t ft_grafana
 kubectl apply -f srcs/grafana/grafana.yaml
 
 #--Wordpress--
-docker build srcs/wordpress/ -t ft_wordpress --build-arg clusterIP=$MY_CLUSTER_IP
+docker build srcs/wordpress/ -t ft_wordpress
 kubectl apply -f srcs/wordpress/wordpress.yaml
 
 #--Ftps--

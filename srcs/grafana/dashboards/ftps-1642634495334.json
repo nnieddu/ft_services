@@ -8,16 +8,23 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
   },
   "editable": true,
+  "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 6,
-  "iteration": 1617973464737,
+  "iteration": 1642634462035,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
       "aliasColors": {},
@@ -26,12 +33,6 @@
       "dashes": false,
       "datasource": null,
       "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -60,7 +61,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "8.2.7",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -159,7 +160,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -185,6 +185,7 @@
       },
       "id": 3,
       "options": {
+        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -193,9 +194,10 @@
           "values": false
         },
         "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "showThresholdMarkers": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "8.2.7",
       "targets": [
         {
           "alias": "$container_name",
@@ -253,12 +255,6 @@
       "dashes": false,
       "datasource": null,
       "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -287,7 +283,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "8.2.7",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -388,26 +384,6 @@
       "dashes": false,
       "datasource": null,
       "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -434,7 +410,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "8.2.7",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -572,29 +548,18 @@
       }
     }
   ],
-  "schemaVersion": 26,
+  "schemaVersion": 32,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": false,
-          "text": "grafana",
-          "value": "grafana"
-        },
+        "description": null,
         "error": null,
         "hide": 2,
         "label": null,
         "name": "container_name",
-        "options": [
-          {
-            "selected": true,
-            "text": "grafana",
-            "value": "grafana"
-          }
-        ],
-        "query": "grafana",
+        "query": "ftps",
         "skipUrlSync": false,
         "type": "constant"
       }
@@ -606,7 +571,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Grafana",
-  "uid": "wwX6W3lMk",
-  "version": 2
+  "title": "ftps",
+  "uid": "GC9OG3lGk",
+  "version": 3
 }

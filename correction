@@ -4,3 +4,10 @@ nginx -g daemon off
 -g 'directives' Set global configuration directives. See EXAMPLES for details. 
 
 LoadBalancer
+
+k8sComponents
+
+ftps passif mode disable
+
+telegraf / influxdb
+
