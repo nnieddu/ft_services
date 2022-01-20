@@ -29,7 +29,7 @@ docker build srcs/mysql/ -t ft_mysql
 kubectl apply -f srcs/mysql/mysql.yaml
 
 #--PhpMyAdmin--
-docker build srcs/phpmyadmin/ -t ft_phpmyadmin --build-arg clusterIP=$MY_CLUSTER_IP
+docker build srcs/phpmyadmin/ -t ft_phpmyadmin
 kubectl apply -f srcs/phpmyadmin/phpmyadmin.yaml
 
 # #--InfluxDB--
