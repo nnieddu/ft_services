@@ -4,6 +4,7 @@ RUN apk update
 RUN apk upgrade
 RUN apk add mariadb mariadb-client wget
 
+COPY ./*.sql ./
 COPY start.sh .
 COPY install_db.sh .
 

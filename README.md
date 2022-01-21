@@ -251,6 +251,8 @@ kubectl exec -it POD_NAME -- bin/sh
 
 kubectl rollout restart deploy DEPLOYMENT
 
+kubectl delete deployment DEPLOYMENT
+
 #FTPS
 lftp _IP_
 login admin admin

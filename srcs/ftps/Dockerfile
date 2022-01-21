@@ -13,6 +13,4 @@ RUN sed -i "s/_IP_/$clusterIP/g" /etc/vsftpd/vsftpd.conf
 
 EXPOSE 21
 
-RUN sh start.sh
-
-CMD ["vsftpd", "/etc/vsftpd/vsftpd.conf"]
+CMD ["sh", "start.sh"]

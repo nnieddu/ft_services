@@ -6,5 +6,5 @@ do
 	mysqladmin status;
 done
 
-mysql < wp.sql
-mysql < gra.sql
+mysql < db_wordpress.sql
+mysql < db_grafana.sql

@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1642634462035,
+  "iteration": 1642730027484,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -559,7 +559,7 @@
         "hide": 2,
         "label": null,
         "name": "container_name",
-        "query": "ftps",
+        "query": "grafana",
         "skipUrlSync": false,
         "type": "constant"
       }
@@ -571,7 +571,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "ftps",
+  "title": "grafana",
   "uid": "GC9OG3lGk",
-  "version": 3
+  "version": 1
 }

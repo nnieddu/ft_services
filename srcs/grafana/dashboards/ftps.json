@@ -559,7 +559,7 @@
         "hide": 2,
         "label": null,
         "name": "container_name",
-        "query": "nginx",
+        "query": "ftps",
         "skipUrlSync": false,
         "type": "constant"
       }
@@ -571,7 +571,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "nginx",
+  "title": "ftps",
   "uid": "GC9OG3lGk",
   "version": 1
 }

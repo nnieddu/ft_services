@@ -6,7 +6,7 @@ RUN apk update
 RUN apk upgrade 
 RUN apk add wget influxdb telegraf --repository='http://dl-cdn.alpinelinux.org/alpine/latest-stable/community/'
 
-COPY ./telegraf.conf  ./config.conf
+COPY ./config.conf .
 COPY ./influx.conf .
 COPY ./start.sh .
 

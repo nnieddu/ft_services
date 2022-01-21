@@ -1,5 +1,6 @@
 Cluster IP => db ?
 
-telegraf / influxdb
+nginx -g daemon off
+-g 'directives' Set global configuration directives. See EXAMPLES for details. 
 
-k8sComponents
+LoadBalancer

@@ -17,6 +17,10 @@ spec:
       - name: ftps
         imagePullPolicy: Never
         image: ft_ftps
+        ports:
+        - containerPort: 21
+          name: ftp
+
 ---
 apiVersion: v1
 kind: Service

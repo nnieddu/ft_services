@@ -5,8 +5,6 @@ mkdir './certs'
 
 influxd -config ./influx.conf &
 
-influx << EOF
-CREATE DATABASES telegraf_metrics;
-EOF
+influx < "CREATE DATABASES telegraf_metrics;"
 
 telegraf --config="./config.conf"
