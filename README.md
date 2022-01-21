@@ -118,14 +118,13 @@ K8s comonents :
 *NODE :* who can contain : Pods (k8s container, usually 1 application/service per pod).
 
 K8s Communication : each pod gets its own Ip adress who change if pod restart/crash.
-*Service* = permanent Ip adress, even if the pod crash, the service will not change, we can connect multiple pods to the same service to have a duplica
+*Service* = permanent Ip adress, even if a pod crash, the service will not change, we can connect multiple pods to the same service to have a duplica
 of our application and so if an app pod crash, the app would still be accessible for users.
 External or Internal service (external are open to public request on the internet)
-Service is load balancer too, the least busy pod/server is gonna be choose by service. 
-
-App should be accessible trough browser : Ingress (make the service accessible trough domain name instead of ip adresse:port).
+Service serve as load balancer too, the least busy pod/server is gonna be choose by service. 
 
 *ConfigMap :* avoid rebuild image and restart service if you want for ex change the db url/service/name
+
 *Secret :* this component is like ConfigMap but is used to store secret data (base4 encoded) ex = DB_USER = mongo-user or DB_PWD = mongo-pwd
 because it's not secure to store/share credentials or sensitive informations in ConfigMap.
 Data from ConfigMap or Secret services can be used inside the app pod to use it for environement variables or propreties files for ex.
@@ -133,12 +132,11 @@ Data from ConfigMap or Secret services can be used inside the app pod to use it 
 Volumes component : serve to store the data persistent between restart of services (can be local or external / cloud).
 
 Deployement component : it's a blueprints for pods, where you can specify the number of app pods replica you want and her configuration.  
-=> Do not use Deployement for DB !
-
 For DB :
 StatefulSet component : 
 Stateless component :
 
+matchLabels:
 
 MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
 Exposes the service externally using a cloud provider loadbalancer. Node-port and Cluster-IP services to which the external loadbalancer routes, are automatically created in k8s. There is a big problem occurs as the type LoadBalancer is only available for use if your K8s cluster is setup in any of the public cloud providers, GCE AWS , etc which ar not free... that's why we use Metallb.
@@ -252,7 +250,7 @@ kubectl exec -it POD_NAME -- bin/sh
 
 kubectl rollout restart deploy DEPLOYMENT
 
-kubectl delete deployment DEPLOYMENT
+kubectl exec deploy/SERVICE -- pkill APP
 
 #FTPS
 lftp _IP_
@@ -262,3 +260,10 @@ login admin admin
 # API bearer tokens to authenticate to the kubelet's HTTPS endpoint
 # --host-only-cidr works only with virtualbox driver + safari make things worse
 # delete to use default host cidr (192.168.99.1/24) if anything goes wrong
+
+TODO :
+-StatefulSet instead of deployment for db
+-Better organisation pv idb
+-secret for all credentials
+-ssl between pma and mariabdb
+-clean and finish readme

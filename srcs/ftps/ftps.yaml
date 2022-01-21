@@ -17,10 +17,6 @@ spec:
       - name: ftps
         imagePullPolicy: Never
         image: my_ftps
-        ports:
-        - containerPort: 21
-          name: ftp
-
 ---
 apiVersion: v1
 kind: Service
@@ -36,9 +32,7 @@ spec:
   ports:
     - protocol: TCP
       port: 21
-      targetPort: 21
       name: ftp
     - protocol: TCP
       port: 6000
-      targetPort: 6000
-      name: pasv-port
+      name: pasv
