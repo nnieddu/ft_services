@@ -16,7 +16,7 @@ spec:
       containers:
       - name: phpmyadmin
         imagePullPolicy: Never
-        image: ft_phpmyadmin
+        image: my_phpmyadmin
 ---
 apiVersion: v1
 kind: Service

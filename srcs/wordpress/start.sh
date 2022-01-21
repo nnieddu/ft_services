@@ -20,7 +20,7 @@ chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp-cli
 
 #config wp db :
-wp-cli config create --dbhost=10.96.83.102 --dbname=wp_db --dbuser=wp_user --dbpass='nini' --path=/usr/share/nginx/html/wordpress --allow-root
+wp-cli config create --dbhost=$MYSQL_SERVICE_SERVICE_HOST --dbname=wp_db --dbuser=wordpress --dbpass='nini' --path=/usr/share/nginx/html/wordpress --allow-root
 #create users :
 wp-cli core install --url=_IP_:5050 --title=nini-wp --admin_user=nini --admin_password=nini --admin_email=ninieddu@student.42lyon.fr --path=/usr/share/nginx/html/wordpress --allow-root
 wp-cli user create user1 user1@example.com --user_pass=nini --role=author --path=/usr/share/nginx/html/wordpress --allow-root

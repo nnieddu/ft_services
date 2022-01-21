@@ -16,7 +16,7 @@ spec:
       containers:
       - name: nginx
         imagePullPolicy: Never
-        image: ft_nginx
+        image: my_nginx
 ---
 apiVersion: v1
 kind: Service

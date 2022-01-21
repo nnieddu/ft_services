@@ -16,7 +16,7 @@ spec:
       containers:
       - name: grafana
         imagePullPolicy: Never
-        image: ft_grafana
+        image: my_grafana
 ---
 apiVersion: v1
 kind: Service

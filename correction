@@ -1,6 +1,8 @@
 Cluster IP => db ?
 
-nginx -g daemon off
--g 'directives' Set global configuration directives. See EXAMPLES for details. 
+Cluster IP => db ?
 
-LoadBalancer
+telegraf / influxdb
+
+k8sComponents
+recreate strat

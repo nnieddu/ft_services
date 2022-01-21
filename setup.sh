@@ -12,7 +12,7 @@ kubectl create secret generic -n metallb-system memberlist --from-literal=secret
 
 # sed -i "s/_IP_/$MY_CLUSTER_IP/g" srcs/metallb-conf.yaml
 # kubectl apply -f srcs/metallb-conf.yaml
-# sed -i "s/$MY_CLUSTER_IP/_IP_/g" srcs/metallb-conf.yaml srcs/backupmlb.yaml
+# sed -i "s/$MY_CLUSTER_IP/_IP_/g" srcs/metallb-conf.yaml
 
 #MACOS SCHOOL VERSION (sed -i marche pas sur mac) : 
 perl -i -pe"s/_IP_/$MY_CLUSTER_IP/g" srcs/metallb-conf.yaml
@@ -20,32 +20,32 @@ kubectl apply -f srcs/metallb-conf.yaml
 perl -i -pe"s/$MY_CLUSTER_IP/_IP_/g" srcs/metallb-conf.yaml
 
 #--Nginx--
-docker build srcs/nginx -t ft_nginx --build-arg clusterIP=$MY_CLUSTER_IP
+docker build srcs/nginx -t my_nginx --build-arg clusterIP=$MY_CLUSTER_IP
 kubectl apply -f srcs/nginx/nginx.yaml
 
 #--MySQL--
-docker build srcs/mysql/ -t ft_mysql
+docker build srcs/mysql/ -t my_mysql
 kubectl apply -f srcs/mysql/mysql.yaml
 
 #--PhpMyAdmin--
-docker build srcs/phpmyadmin/ -t ft_phpmyadmin
+docker build srcs/phpmyadmin/ -t my_phpmyadmin
 kubectl apply -f srcs/phpmyadmin/phpmyadmin.yaml
 
 # #--InfluxDB--
 kubectl create configmap cert-conf --from-file=$DOCKER_CERT_PATH
-docker build srcs/influxdb/ -t ft_influxdb --build-arg dockerHost=$DOCKER_HOST
+docker build srcs/influxdb/ -t my_influxdb --build-arg dockerHost=$DOCKER_HOST
 kubectl apply -f srcs/influxdb/influxdb.yaml
 
 # #--Grafana--
-docker build srcs/grafana/ -t ft_grafana
+docker build srcs/grafana/ -t my_grafana
 kubectl apply -f srcs/grafana/grafana.yaml
 
 #--Wordpress--
-docker build srcs/wordpress/ -t ft_wordpress --build-arg clusterIP=$MY_CLUSTER_IP
+docker build srcs/wordpress/ -t my_wordpress --build-arg clusterIP=$MY_CLUSTER_IP
 kubectl apply -f srcs/wordpress/wordpress.yaml
 
 #--Ftps--
-docker build srcs/ftps -t ft_ftps --build-arg clusterIP=$MY_CLUSTER_IP
+docker build srcs/ftps -t my_ftps --build-arg clusterIP=$MY_CLUSTER_IP
 kubectl apply -f srcs/ftps/ftps.yaml
 
 echo "
@@ -53,9 +53,9 @@ echo "
 [wp admin]	= nini:nini
 [wp user1]	= user1:nini
 [wp user2]	= user2:nini
-[wp DB]		= wp_user:nini
+[wp DB]		= wordpress:nini
 ----------------------------
-[grafanaDB] = gra_user:nini
+[grafanaDB] = grafana:nini
 [grafanaU]  = admin:admin
 ----------------------------
 [ftps]  = admin:admin

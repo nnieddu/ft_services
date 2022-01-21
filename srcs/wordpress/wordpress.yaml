@@ -16,7 +16,7 @@ spec:
       containers:
       - name: wordpress
         imagePullPolicy: Never
-        image: ft_wordpress
+        image: my_wordpress
 ---
 apiVersion: v1
 kind: Service

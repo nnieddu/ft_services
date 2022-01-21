@@ -16,7 +16,7 @@ spec:
       containers:
       - name: ftps
         imagePullPolicy: Never
-        image: ft_ftps
+        image: my_ftps
         ports:
         - containerPort: 21
           name: ftp

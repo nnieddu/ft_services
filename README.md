@@ -52,7 +52,7 @@ peuvent être présente, mais aucune ne doit etre du type "NodePort".
 
 Voici un schéma exemple de ce qui est mis en place :
 
-![shema](https://github.com/nnieddu/ft_services/blob/main/shema.png)
+![shema](https://github.com/nnieddu/my_services/blob/main/shema.png)
 
 /!\ L’utilisation de services de type Node Port, de l’objet Ingress
 Controller ou de la commande kubectl port-forward est interdite pour le sujet de cet exercice.
@@ -70,6 +70,7 @@ https://minikube.sigs.k8s.io/docs/drivers/virtualbox/
 https://minikube.sigs.k8s.io/docs/handbook/accessing/
 https://minikube.sigs.k8s.io/docs/handbook/pushing/
 https://minikube.sigs.k8s.io/docs/commands/docker-env/
+https://minikube.sigs.k8s.io/docs/handbook/persistent_volumes/
 
 metallb & nginx :
 

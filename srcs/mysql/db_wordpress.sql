@@ -1,4 +1,4 @@
 CREATE DATABASE wp_db;
-CREATE USER 'wp_user' IDENTIFIED BY 'nini'; 
-GRANT ALL PRIVILEGES ON wp_db.* TO 'wp_user';
+CREATE USER 'wordpress' IDENTIFIED BY 'nini'; 
+GRANT ALL PRIVILEGES ON wp_db.* TO 'wordpress';
 FLUSH PRIVILEGES;

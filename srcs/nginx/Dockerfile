@@ -8,8 +8,8 @@ RUN apk add nginx openssh openssl lftp
 COPY ./default.conf /etc/nginx/conf.d/
 COPY ./start.sh .
 
-EXPOSE 22 80 443
+EXPOSE 80 443
 
-RUN sh start.sh $clusterIP
+RUN sed -i "s/_IP_/$clusterIP/g" /etc/nginx/conf.d/default.conf
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["sh", "start.sh"]

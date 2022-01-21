@@ -10,7 +10,7 @@ kubectl delete --all replicaset
 kubectl delete --all configmap
 kubectl delete --all namespace
 
-minikube stop
+minikube stops
 minikube delete --all --purge
 
 eval $(minikube docker-env)

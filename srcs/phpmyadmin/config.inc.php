@@ -29,7 +29,7 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = '10.96.83.102';
+$cfg['Servers'][$i]['host'] = '_IP_';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = yes;
 $cfg['PmaAbsoluteUri'] = './';

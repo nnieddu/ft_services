@@ -8,23 +8,16 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
-        "target": {
-          "limit": 100,
-          "matchAny": false,
-          "tags": [],
-          "type": "dashboard"
-        },
         "type": "dashboard"
       }
     ]
   },
   "editable": true,
-  "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1642730027484,
+  "id": 8,
+  "iteration": 1617973651693,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "aliasColors": {},
@@ -33,6 +26,12 @@
       "dashes": false,
       "datasource": null,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -61,7 +60,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.7",
+      "pluginVersion": "7.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -160,6 +159,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
+          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -185,7 +185,6 @@
       },
       "id": 3,
       "options": {
-        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -194,10 +193,9 @@
           "values": false
         },
         "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
+        "showThresholdMarkers": true
       },
-      "pluginVersion": "8.2.7",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "alias": "$container_name",
@@ -255,6 +253,12 @@
       "dashes": false,
       "datasource": null,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -283,7 +287,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.7",
+      "pluginVersion": "7.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -384,6 +388,26 @@
       "dashes": false,
       "datasource": null,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -410,7 +434,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.7",
+      "pluginVersion": "7.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -548,17 +572,28 @@
       }
     }
   ],
-  "schemaVersion": 32,
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "description": null,
+        "current": {
+          "selected": false,
+          "text": "nginx",
+          "value": "nginx"
+        },
         "error": null,
         "hide": 2,
         "label": null,
         "name": "container_name",
+        "options": [
+          {
+            "selected": true,
+            "text": "nginx",
+            "value": "nginx"
+          }
+        ],
         "query": "nginx",
         "skipUrlSync": false,
         "type": "constant"
@@ -572,6 +607,6 @@
   "timepicker": {},
   "timezone": "",
   "title": "nginx",
-  "uid": "GC9OG3lGk",
-  "version": 1
+  "uid": "hkJnG3lGk",
+  "version": 2
 }

@@ -1,3 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-mysql
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /data/
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,7 +32,7 @@ spec:
       containers:
       - name: mysql
         imagePullPolicy: Never
-        image: ft_mysql
+        image: my_mysql
         volumeMounts:
          - name: pv-mysql
            mountPath: "./data"
@@ -31,7 +43,6 @@ metadata:
   name: mysql-service
 spec:
   type: ClusterIP
-  clusterIP: 10.96.83.102
   selector:
     app: mysql
   ports:
