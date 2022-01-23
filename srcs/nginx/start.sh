@@ -1,7 +1,7 @@
 #!/bin/sh
 
-mkdir -p /usr/share/nginx/html
 mkdir -p /run/nginx
+mkdir -p /usr/share/nginx/html
 
 #Pour autoriser/tester le serveur ftps avec un certif autosigne :
 echo "set ssl:verify-certificate off" >> /etc/lftp.conf
@@ -10,9 +10,9 @@ echo "set ssl:verify-certificate off" >> /etc/lftp.conf
 echo "<div style=background-color:black;color:white;>
 <h1><center>ft_services [42] by ninieddu  <span style='font-size:40px;'>&#128512;</span></center></h1>
 <center><h2>You can use :</h2></center>
-<center><p>/phpmyadmin</p></center>
-<center>or</center>
-<center><p>/wordpress</p></center><br></div>" > /usr/share/nginx/html/index.html
+<center><p>/wordpress</p></center>
+<center>or :</center>
+<center><p>/phpmyadmin</p></center><br></div>" > /usr/share/nginx/html/index.html
 
 # #ssh :
 echo "root:root" | chpasswd

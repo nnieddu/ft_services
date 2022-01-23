@@ -1,21 +1,19 @@
 #!/bin/sh
 
 #create nginx folders :
-mkdir -p /usr/share/nginx/html
 mkdir -p /run/nginx
+mkdir -p /usr/share/nginx/html
 
 #create ssl certs and key :
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 -subj '/C=FR/ST=FR/L=null/O=null/CN=null' \
--keyout /etc/ssl/certs/localhost.key -out /etc/ssl/certs/localhost.crt
+-keyout /etc/ssl/certs/wp.key -out /etc/ssl/certs/wp.crt
 
-#download wordpress and wordpress cli :
-curl -O https://wordpress.org/wordpress-5.8.3.tar.gz
+#download and install wordpress and wordpress cli :
 tar -xf wordpress-5.8.3.tar.gz
 rm -rf wordpress-5.8.3.tar.gz
 mv wordpress/ /usr/share/nginx/html/
 
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp-cli
 

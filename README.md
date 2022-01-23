@@ -81,7 +81,7 @@ https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-s
 Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
 
 mysql / mariaDB:
-https://dev.mysql.com/doc/refman/5.7/en/connecting.html
+https://dev.mysql.com/doc/refman/8.0/en/connecting.html
 https://mariadb.com/kb/en/mysqld_safe/
 
 phpmyadmin :
@@ -92,24 +92,15 @@ Grafana :
 https://grafana.com/docs/grafana/latest/introduction/
 https://grafana.com/grafana/dashboards/
 
-Influxdb :
-https://docs.influxdata.com/influxdb/v2.1/
+Influxdb & telegraf :
+https://docs.influxdata.com/influxdb/v1.8/
+https://docs.influxdata.com/telegraf/v1.20/administration/configuration/
 
 Ftps (vsftpd) :
 https://wiki.alpinelinux.org/wiki/FTP
 http://vsftpd.beasts.org/vsftpd_conf.html
 https://www.liquidweb.com/kb/configure-vsftpd-ssl/
-https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vsftpd-conf.html
-
-wordpress & Mysql alpine : 
-https://wiki.alpinelinux.org/wiki/WordPress
-https://wp-cli.org/
-
-## Kubernetes Infos & CheatSheet
-
-What is Minikube?
-Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
-
+https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vshttps://dev.mysql.com/doc/refman/8.0/en/option-files.html
 Kubernetes is an open source conatainers orchestror originaly develloped by Google.
 His goal is to help manage containerized applications, in different deployement environments.
 Kubernetes permit a high availability (no downtime), disaster recovery (fast backup and restore) and scalability.
@@ -117,7 +108,7 @@ Kubernetes permit a high availability (no downtime), disaster recovery (fast bac
 K8s comonents :
 *NODE :* who can contain : Pods (k8s container, usually 1 application/service per pod).
 
-K8s Communication : each pod gets its own Ip adress who change if pod restart/crash.
+*K8s Communication :* each pod gets its own Ip adress who change if pod restart/crash.
 *Service* = permanent Ip adress, even if a pod crash, the service will not change, we can connect multiple pods to the same service to have a duplica
 of our application and so if an app pod crash, the app would still be accessible for users.
 External or Internal service (external are open to public request on the internet)
@@ -129,32 +120,30 @@ Service serve as load balancer too, the least busy pod/server is gonna be choose
 because it's not secure to store/share credentials or sensitive informations in ConfigMap.
 Data from ConfigMap or Secret services can be used inside the app pod to use it for environement variables or propreties files for ex.
 
-Volumes component : serve to store the data persistent between restart of services (can be local or external / cloud).
+*Volumes component :* serve to store the data persistent between restart of services (can be local or external / cloud).
 
-Deployement component : it's a blueprints for pods, where you can specify the number of app pods replica you want and her configuration.  
+*Deployement component :* it's a blueprints for pods, where you can specify the number of app pods replica you want and her configuration.  
 For DB :
 StatefulSet component : 
 Stateless component :
 
 matchLabels:
 
-MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
+*MetalLB* is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
 Exposes the service externally using a cloud provider loadbalancer. Node-port and Cluster-IP services to which the external loadbalancer routes, are automatically created in k8s. There is a big problem occurs as the type LoadBalancer is only available for use if your K8s cluster is setup in any of the public cloud providers, GCE AWS , etc which ar not free... that's why we use Metallb.
 
 ## Rapid and important tips : 
 *Régler imagePullPolicysur Never, sinon Kubernetes essaiera de télécharger l'image (dans les deployements .yaml).
 
-*Vous devez exécuter eval $(minikube docker-env) sur chaque terminal ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.
+*Vous devez exécuter eval $(minikube docker-env) sur chaque terminal / script ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.
 
 ## K8s Commands
 ### minikube CLI :
 
 ###### Start minikube :
 ```
-minikube start --driver=<driver_name>
+minikube start --driver=<driver/hypervisor_name(docker,virtualbox,hyperkit...)> 
 ```
-*in our case we gonna choose virtual box hypervisor to run minikube who need an hypervisor. (minikube start --driver=virtualbox)
-
 ```
 minikube stop
 ```
@@ -163,16 +152,15 @@ minikube stop
 minikube kubectl get nodes
 ```
 
-Display the status of minikube :
 ```
 minikube status
 ```
+
 Open desired service in web browser :
 ```
 minikube service <service name>
 ```
-
-Getting the NodePort :
+Getting service url :
 ```
 minikube service --url <service name>
 ```
@@ -182,32 +170,9 @@ minikube dashboard
 
 ### kubectl CLI
 (if you install minikube only, you will need to add "minikube " before commands)
-```
-kubectl get nodes
-```
 
 ```
-kubectl get pod
-```
-
-
-```
-kubectl create -h
-```
-```
-kubectl create deployment nginx-depl --image=nginx
-```
-
-```
-kubectl get deployment
-```
-
-```
-kubectl get replicaset
-```
-
-```
-kubectl edit deployment <name of pod>
+kubectl get <somethings/all>
 ```
 
 ```
@@ -217,11 +182,11 @@ kubectl delete deployment <name of pod>
 ```
 kubectl apply -f <config-file.yaml>
 ```
-Debug : 
+Debug / logs : 
 ```
 kubectl logs <name of pod>
 ```
-Exec un terminal -it = interactif dans le pod
+Exec un terminal dans le pod
 ```
 kubectl exec -it <pod name> -- bin/bash
 ```
@@ -229,18 +194,16 @@ kubectl exec -it <pod name> -- bin/bash
 kubectl rollout restart deploy DEPLOYEMENT
 ```
 
+
  By default, minikube only exposes/use Nodeport 30000-32767.
 
 `minikube docker - env | Invoke - Expression` # PowerShell windows
 
-minikube start vm-driver=hyperkit #Start minikube with hyperkit, The best for macOS apparently
-
 kubectl get events 
 
-#Dashboard
 minikube dashboard
 
-# Kubectl usefull cmds
+# most usefull cmds
 
 kubectl get all
 kubectl logs deployment/DEPLOYMENT
@@ -257,13 +220,15 @@ lftp _IP_
 login admin admin
 
 #minikube start --extra-config=kubelet.authentication-token-webhook=true is used to enable
-# API bearer tokens to authenticate to the kubelet's HTTPS endpoint
+
+API bearer tokens to authenticate to the kubelet's HTTPS endpoint
+```
 # --host-only-cidr works only with virtualbox driver + safari make things worse
 # delete to use default host cidr (192.168.99.1/24) if anything goes wrong
+```
 
 TODO :
 -StatefulSet instead of deployment for db
 -Better organisation pv idb
 -secret for all credentials
--ssl between pma and mariabdb
 -clean and finish readme

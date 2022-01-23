@@ -10,13 +10,15 @@ kubectl delete --all replicaset
 kubectl delete --all configmap
 kubectl delete --all namespace
 
-minikube stops
-minikube delete --all --purge
+ssh-keygen -f "/home/douwi/.ssh/known_hosts" -R "$(minikube ip)"
 
 eval $(minikube docker-env)
 docker rm -vf $(docker ps -aq)
 docker rmi -f $(docker images -aq)
 docker system prune -a -f
+
+minikube stops
+minikube delete --all --purge
 
 rm -rf $HOME/.minikube
 rm -rf $HOME/.kube

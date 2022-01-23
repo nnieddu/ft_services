@@ -2,7 +2,7 @@ FROM alpine:3.12
 
 RUN apk update
 RUN apk upgrade
-RUN apk add mariadb mariadb-client wget
+RUN apk add mariadb mariadb-client
 
 COPY ./*.sql ./
 COPY start.sh .

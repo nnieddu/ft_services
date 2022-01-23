@@ -6,11 +6,11 @@ RUN apk update
 RUN apk upgrade 
 RUN apk add wget influxdb telegraf --repository='http://dl-cdn.alpinelinux.org/alpine/latest-stable/community/'
 
-COPY ./config.conf .
+COPY ./telegraf.conf .
 COPY ./influx.conf .
 COPY ./start.sh .
 
-RUN sed -i "s=_IP_=$dockerHost=g" config.conf
+RUN sed -i "s=_IP_=$dockerHost=g" telegraf.conf
 
 EXPOSE 8086
 

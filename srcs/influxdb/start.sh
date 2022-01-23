@@ -1,7 +1,7 @@
 #!/bin/sh
 
-influxd -config ./influx.conf &
+influxd -config influx.conf &
 
 influx < "CREATE DATABASES telegraf_metrics;"
 
-telegraf --config="./config.conf"
+telegraf --config="telegraf.conf"
