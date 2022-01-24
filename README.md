@@ -211,17 +211,24 @@ kubectl get events
 
 minikube dashboard
 
-# most usefull cmds
-
+### most usefull cmds
+```
 kubectl get all
+```
+```
 kubectl logs deployment/DEPLOYMENT
-
+```
+```
 kubectl exec -it POD_NAME -- bin/sh
+```
 => ./fast.sh DEPLOYMENT
 
+```
 kubectl rollout restart deploy DEPLOYMENT
-
+```
+```
 kubectl exec deploy/SERVICE -- pkill APP
+```
 
 #FTPS
 lftp _IP_
