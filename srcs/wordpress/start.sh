@@ -17,6 +17,8 @@ mv wordpress/ /usr/share/nginx/html/
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp-cli
 
+sleep 20
+
 #config wp db :
 wp-cli config create --dbhost=$MYSQL_SERVICE_SERVICE_HOST --dbname=wp_db --dbuser=wordpress --dbpass='nini' --path=/usr/share/nginx/html/wordpress --allow-root
 #create users :

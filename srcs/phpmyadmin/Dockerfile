@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-RUN apk update
+RUN apk update 
 RUN apk upgrade 
 RUN apk add nginx openssl phpmyadmin php7 php7-fpm php7-opcache php7-json \
 php7-common php7-iconv php7-json php7-gd php7-curl php7-xml php7-mysqli \

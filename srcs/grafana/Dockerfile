@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
-RUN apk update
-RUN apk upgrade
+RUN apk update 
+RUN apk upgrade 
 RUN apk add grafana --repository='http://dl-cdn.alpinelinux.org/alpine/latest-stable/community/'
 
 RUN mkdir -p /usr/share/grafana/conf/provisioning/datasources

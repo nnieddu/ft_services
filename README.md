@@ -91,16 +91,24 @@ hide useless dbs : https://stackoverflow.com/questions/12071460/how-to-hide-info
 Grafana :
 https://grafana.com/docs/grafana/latest/introduction/
 https://grafana.com/grafana/dashboards/
+https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vshttps://dev.mysql.com/doc/refman/8.0/en/option-files.html
+
 
 Influxdb & telegraf :
 https://docs.influxdata.com/influxdb/v1.8/
 https://docs.influxdata.com/telegraf/v1.20/administration/configuration/
+https://www.junosnotes.com/devops/how-to-install-influxdb-telegraf-and-grafana-on-docker/#Prepare_Telegraf_for_InfluxDB_and_Docker
+https://www.influxdata.com/blog/monitoring-kubernetes-architecture/
 
 Ftps (vsftpd) :
 https://wiki.alpinelinux.org/wiki/FTP
 http://vsftpd.beasts.org/vsftpd_conf.html
 https://www.liquidweb.com/kb/configure-vsftpd-ssl/
 https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vshttps://dev.mysql.com/doc/refman/8.0/en/option-files.html
+
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+
 Kubernetes is an open source conatainers orchestror originaly develloped by Google.
 His goal is to help manage containerized applications, in different deployement environments.
 Kubernetes permit a high availability (no downtime), disaster recovery (fast backup and restore) and scalability.
