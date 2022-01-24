@@ -63,7 +63,7 @@ echo "
 
 Minikube ip: $MY_CLUSTER_IP
 
-http://$MY_CLUSTER_IP
+https://$MY_CLUSTER_IP
 
 "
 

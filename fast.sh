@@ -19,7 +19,15 @@ then
 	if [ $2 = "-r" ]
 	then
 		PODNAME=$(echo $PODNAME | cut -d '-' -f 1)
+		echo $PODNAME
 		kubectl rollout restart deploy $PODNAME
+		exit
+	fi
+
+	if [ $2 = "-rmrf" ]
+	then
+		PODNAME=$(echo $PODNAME | cut -d '-' -f 1)
+		kubectl exec deploy/$PODNAME -- pkill $PODNAME
 		exit
 	fi
 
