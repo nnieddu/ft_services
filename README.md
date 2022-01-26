@@ -243,7 +243,7 @@ API bearer tokens to authenticate to the kubelet's HTTPS endpoint
 ```
 
 TODO :
--StatefulSet instead of deployment for db  
--Better organisation pv idd  
--secret for all credentials
--clean and finish readme
+-StatefulSet instead of deployment for db   
+-Better organisation pv idd    
+-secret for all credentials  
+-clean and finish readme  
