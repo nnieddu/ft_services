@@ -242,7 +242,7 @@ API bearer tokens to authenticate to the kubelet's HTTPS endpoint
 # delete to use default host cidr (192.168.99.1/24) if anything goes wrong
 ```
 
-TODO :
+TODO :  
 -StatefulSet instead of deployment for db   
 -Better organisation pv idd    
 -secret for all credentials  
