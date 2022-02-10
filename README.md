@@ -73,11 +73,10 @@ https://minikube.sigs.k8s.io/docs/commands/docker-env/
 https://minikube.sigs.k8s.io/docs/handbook/persistent_volumes/
 
 metallb & nginx :  
-
-Useless if don't use of metallb addon : https://metallb.universe.tf/installation/#installation-by-manifest
-https://devopslearning.medium.com/metallb-load-balancer-for-bare-metal-kubernetes-43686aa0724f
-https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe
-https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236081-mettez-en-place-un-reverse-proxy-avec-nginx
+Useless if don't use of metallb addon : https://metallb.universe.tf/installation/#installation-by-manifest  
+https://devopslearning.medium.com/metallb-load-balancer-for-bare-metal-kubernetes-43686aa0724f  
+https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe  
+https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236081-mettez-en-place-un-reverse-proxy-avec-nginx  
 Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
 
 mysql / mariaDB:  
@@ -247,3 +246,4 @@ TODO :
 -Better organisation pv idd    
 -secret for all credentials  
 -clean and finish readme  
+-doc for my fast script
