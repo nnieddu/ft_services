@@ -66,44 +66,43 @@ https://wiki.alpinelinux.org/wiki/Enable_Community_Repository
 
 minikube bases, start, images building and usage on local :  
 https://minikube.sigs.k8s.io/docs/start/
-https://minikube.sigs.k8s.io/docs/drivers/virtualbox/
-https://minikube.sigs.k8s.io/docs/handbook/accessing/
-https://minikube.sigs.k8s.io/docs/handbook/pushing/
-https://minikube.sigs.k8s.io/docs/commands/docker-env/
-https://minikube.sigs.k8s.io/docs/handbook/persistent_volumes/
-
+https://minikube.sigs.k8s.io/docs/drivers/virtualbox/  
+https://minikube.sigs.k8s.io/docs/handbook/accessing/  
+https://minikube.sigs.k8s.io/docs/handbook/pushing/  
+https://minikube.sigs.k8s.io/docs/commands/docker-env/  
+https://minikube.sigs.k8s.io/docs/handbook/persistent_volumes/  
+ 
 metallb & nginx :  
-Useless if don't use of metallb addon : https://metallb.universe.tf/installation/#installation-by-manifest  
-https://devopslearning.medium.com/metallb-load-balancer-for-bare-metal-kubernetes-43686aa0724f  
-https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe  
-https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236081-mettez-en-place-un-reverse-proxy-avec-nginx  
-Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/ 
-
-mysql / mariaDB:  
-https://dev.mysql.com/doc/refman/8.0/en/connecting.html
-https://mariadb.com/kb/en/mysqld_safe/
+Useless if don't use of metallb addon : https://metallb.universe.tf/installation/#installation-by-manifest   
+https://devopslearning.medium.com/metallb-load-balancer-for-bare-metal-kubernetes-43686aa0724f   
+https://medium.com/@shoaib_masood/metallb-network-loadbalancer-minikube-335d846dfdbe   
+https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236081-mettez-en-place-un-reverse-proxy-avec-nginx   
+Good security post on nginx (with k8s) : https://bridgecrew.io/blog/creating-a-secure-kubernetes-nginx-deployment-using-checkov/  
+  
+mysql / mariaDB:   
+https://dev.mysql.com/doc/refman/8.0/en/connecting.html  
+https://mariadb.com/kb/en/mysqld_safe/  
 
 phpmyadmin :  
-https://docs.phpmyadmin.net/fr/latest/
+https://docs.phpmyadmin.net/fr/latest/  
 hide useless dbs : https://stackoverflow.com/questions/12071460/how-to-hide-information-schema-database-from-phpmyadmin
 
-Grafana :  
-https://grafana.com/docs/grafana/latest/introduction/
-https://grafana.com/grafana/dashboards/
-https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vshttps://dev.mysql.com/doc/refman/8.0/en/option-files.html
+Grafana :   
+https://grafana.com/docs/grafana/latest/introduction/  
+https://grafana.com/grafana/dashboards/   
+https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vshttps://dev.mysql.com/doc/refman/8.0/en/option-files.html  
 
-
-Influxdb & telegraf :  
-https://docs.influxdata.com/influxdb/v1.8/
-https://docs.influxdata.com/telegraf/v1.20/administration/configuration/
-https://www.junosnotes.com/devops/how-to-install-influxdb-telegraf-and-grafana-on-docker/#Prepare_Telegraf_for_InfluxDB_and_Docker
-https://www.influxdata.com/blog/monitoring-kubernetes-architecture/
-
+Influxdb & telegraf :   
+https://docs.influxdata.com/influxdb/v1.8/   
+https://docs.influxdata.com/telegraf/v1.20/administration/configuration/  
+https://www.junosnotes.com/devops/how-to-install-influxdb-telegraf-and-grafana-on-docker/#Prepare_Telegraf_for_InfluxDB_and_Docker  
+https://www.influxdata.com/blog/monitoring-kubernetes-architecture/  
+  
 Ftps (vsftpd) :  
-https://wiki.alpinelinux.org/wiki/FTP
-http://vsftpd.beasts.org/vsftpd_conf.html
-https://www.liquidweb.com/kb/configure-vsftpd-ssl/
-https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vshttps://dev.mysql.com/doc/refman/8.0/en/option-files.html
+https://wiki.alpinelinux.org/wiki/FTP  
+http://vsftpd.beasts.org/vsftpd_conf.html  
+https://www.liquidweb.com/kb/configure-vsftpd-ssl/  
+https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-ftp-vshttps://dev.mysql.com/doc/refman/8.0/en/option-files.html  
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------
