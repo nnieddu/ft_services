@@ -64,7 +64,7 @@ Pour le bon fonctionnement de ssh et ftps d'autres ports doivent etre utilises.
 Alpine :
 https://wiki.alpinelinux.org/wiki/Enable_Community_Repository
 
-minikube bases, start, images building and usage on local :
+minikube bases, start, images building and usage on local :  
 https://minikube.sigs.k8s.io/docs/start/
 https://minikube.sigs.k8s.io/docs/drivers/virtualbox/
 https://minikube.sigs.k8s.io/docs/handbook/accessing/
@@ -228,12 +228,14 @@ kubectl rollout restart deploy DEPLOYMENT
 kubectl exec deploy/SERVICE -- pkill APP
 ```
 
-#FTPS
+# FTPS cmd 
 lftp _IP_
 login admin admin
 
-#minikube start --extra-config=kubelet.authentication-token-webhook=true is used to enable
 
+# Various / to sort 
+
+#minikube start --extra-config=kubelet.authentication-token-webhook=true is used to enable
 API bearer tokens to authenticate to the kubelet's HTTPS endpoint
 ```
 # --host-only-cidr works only with virtualbox driver + safari make things worse
