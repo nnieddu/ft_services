@@ -203,11 +203,13 @@ kubectl exec -it <pod name> -- bin/bash # Exec un terminal dans le pod
 ```
 kubectl rollout restart deploy DEPLOYEMENT #Restart deployement
 ```
-
+```
 kubectl get events 
-
+```
+```
 minikube dashboard
-
+```
+  
 ### most usefull cmds
 ```
 kubectl get all
