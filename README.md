@@ -249,3 +249,4 @@ TODO :
 -secret for all credentials  
 -clean and finish readme  
 -doc for my fast script
+-liveness probe influxd..
