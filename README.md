@@ -142,7 +142,9 @@ Exposes the service externally using a cloud provider loadbalancer. Node-port an
 ## Rapid and important tips : 
 *Régler imagePullPolicysur Never, sinon Kubernetes essaiera de télécharger l'image (dans les deployements .yaml).
 
-*Vous devez exécuter eval $(minikube docker-env) sur chaque terminal / script ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.
+*Vous devez exécuter eval $(minikube docker-env) sur chaque terminal / script ou vous souhaitez utiliser des commandes 'docker', car il définit uniquement les variables d'environnement pour la session shell actuelle.  
+
+ By default, minikube only exposes/use Nodeport 30000-32767.  
 
 ## K8s Commands
 ### minikube CLI :
@@ -193,18 +195,15 @@ Debug / logs :
 ```
 kubectl logs <name of pod>
 ```
-Exec un terminal dans le pod
 ```
-kubectl exec -it <pod name> -- bin/bash
+kubectl exec -it <pod name> -- bin/bash # Exec un terminal dans le pod
 ```
 ```
-kubectl rollout restart deploy DEPLOYEMENT
-```
-
-
- By default, minikube only exposes/use Nodeport 30000-32767.
-
 `minikube docker - env | Invoke - Expression` # PowerShell windows
+```
+```
+kubectl rollout restart deploy DEPLOYEMENT #Restart deployement
+```
 
 kubectl get events 
 
