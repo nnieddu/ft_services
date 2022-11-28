@@ -10,7 +10,7 @@ Infrastructure et différents services à mettre en place :
 
 • Le dashboard web de Kubernetes. Celui-ci est utile pour gérer votre cluster.
 
-• Un Load Balancer (matallb) qui gère l’accès externe à nos services dans un cluster.
+• Un Load Balancer (metallb) qui gère l’accès externe à nos services dans un cluster.
 C’est uniquement lui qui servira pour exposer nos services. 
 Nous devons garder les ports propres aux services (IP :3000 pour Grafana etc). 
 Le Load Balancer n’utilise qu’une seule ip.
